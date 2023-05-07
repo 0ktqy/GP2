@@ -98,9 +98,8 @@ function Dashboard() {
               {/* Card (Income/Expenses) */}
               <DashboardCard13 />
               {/* Card (Income/Expenses) */}
-              <DashboardCard14 />
-              {/* Card (Income/Expenses) */}
-              <DashboardCard15 />
+        
+        
             </div>
 
           </div>

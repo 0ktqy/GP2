@@ -6,9 +6,7 @@ import WelcomeBanner from '../partials/dashboard/WelcomeBanner';
 import DashboardAvatars from '../partials/dashboard/DashboardAvatars';
 import FilterButton from '../partials/actions/FilterButton';
 import Datepicker from '../partials/actions/Datepicker';
-import DashboardCard01 from '../partials/dashboard/DashboardCard01';
-import DashboardCard02 from '../partials/dashboard/DashboardCard02';
-import DashboardCard03 from '../partials/dashboard/DashboardCard03';
+
 import DashboardCard04 from '../partials/dashboard/DashboardCard04';
 import DashboardCard05 from '../partials/dashboard/DashboardCard05';
 import DashboardCard06 from '../partials/dashboard/DashboardCard06';
@@ -23,7 +21,7 @@ import DashboardCard14 from '../partials/dashboard/NewDashboardPieChart';
 import DashboardCard15 from '../partials/dashboard/NewDashboardBarChart';
 import Banner from '../partials/Banner';
 
-function Costumer() {
+function Finance() {
 
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
@@ -71,14 +69,25 @@ function Costumer() {
             {/* Cards */}
             <div className="grid grid-cols-12 gap-7">
 
-           
-            <DashboardCard10/>
+
+              {/* Bar chart (Direct vs Indirect) */}
+              <DashboardCard04 />
+              {/* Line chart (Real Time Value) */}
+              <DashboardCard05 />
+              {/* Doughnut chart (Top Countries) */}
+              <DashboardCard06 />
+     
+              {/* Line chart (Sales Over Time) */}
+              <DashboardCard08 />
+              {/* Stacked bar chart (Sales VS Refunds) */}
+              <DashboardCard09 />
+  
+              {/* Card (Reasons for Refunds) */}
+
+              <DashboardCard13 />
               {/* Card (Income/Expenses) */}
-              <DashboardCard15 />
-              <DashboardCard07/>
-              <DashboardCard12 />
-              {/* Card (Income/Expenses) */}
-    
+        
+        
             </div>
 
           </div>
@@ -91,4 +100,4 @@ function Costumer() {
   );
 }
 
-export default Costumer;
+export default Finance;

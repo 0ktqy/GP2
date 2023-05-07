@@ -13,6 +13,9 @@ import './charts/ChartjsConfig';
 import Dashboard from './pages/Dashboard';
 import Okioki from './pages/Costumer';
 import Station from './pages/Station';
+import Deneme from './pages/Deneme'
+import Login from './Login';
+import Finance from './pages/Finance'
 
 function App() {
 
@@ -27,12 +30,17 @@ function App() {
   return (
     <>
       <Routes>
-        <Route exact path="/" element={<Dashboard />} />
+        <Route exact path="/" element={<Finance />} />
         <Route exact path="Costumer" element={<Okioki />} />
         <Route exact path="Station" element={<Station />} />
+        <Route exact path="Deneme" element={<Deneme/>} />
+        <Route exact path="Login" element={<Login/>} />
+        <Route exact path="Finance" element={<Finance/>} />
+
       </Routes>
     </>
   );
 }
 
 export default App;
+
