@@ -10,12 +10,17 @@ import './css/style.css';
 import './charts/ChartjsConfig';
 
 // Import pages
-import Dashboard from './pages/Dashboard';
-import Okioki from './pages/Costumer';
+import Customer from './pages/Costumer';
 import Station from './pages/Station';
 import Deneme from './pages/Deneme'
+import Deneme2 from './pages/Deneme2'
+import Draggable from './pages/Draggable2';
 import Login from './Login';
 import Finance from './pages/Finance'
+import Personal from './pages/Personal'
+import ExportData from './pages/ExportData'
+
+
 
 function App() {
 
@@ -30,14 +35,26 @@ function App() {
   return (
     <>
       <Routes>
-        <Route exact path="/" element={<Finance />} />
-        <Route exact path="Costumer" element={<Okioki />} />
+
+        
+        <Route exact path="/" element={<Station />} />
+        <Route exact path="Costumer" element={<Customer />} />
         <Route exact path="Station" element={<Station />} />
+        <Route exact path="Finance" element={<Finance/>} />
         <Route exact path="Deneme" element={<Deneme/>} />
         <Route exact path="Login" element={<Login/>} />
-        <Route exact path="Finance" element={<Finance/>} />
+        <Route exact path="Deneme2" element={<Deneme2/>} />
+        <Route exact path="Draggable" element={<Draggable/>} />
+        <Route exact path="Personal" element={<Personal/>} />
+        <Route exact path="ExportData" element={<ExportData/>} />
+
+
+
 
       </Routes>
+
+
+
     </>
   );
 }

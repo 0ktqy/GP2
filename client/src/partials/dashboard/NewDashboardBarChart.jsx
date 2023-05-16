@@ -9,38 +9,38 @@ function NewDashboardBarChart() {
     const data = [
         {
           name: '2018',
-          DC: 4000,
-          AC: 2400,
+          Personal: 4000,
+          Corporate: 2400,
           amt: 2400,
         },
         {
           name: '2019',
-          DC: 3000,
-          AC: 1398,
+          Personal: 3000,
+          Corporate: 1398,
           amt: 2210,
         },
         {
           name: '2020',
-          DC: 2000,
-          AC: 9800,
+          Personal: 2000,
+          Corporate: 9800,
           amt: 2290,
         },
         {
           name: '2021',
-          DC: 2780,
-          AC: 3908,
+          Personal: 2780,
+          Corporate: 3908,
           amt: 2000,
         },
         {
           name: '2022',
-          DC: 1890,
-          AC: 4800,
+          Personal: 1890,
+          Corporate: 4800,
           amt: 2181,
         },
         {
           name: '2023',
-          DC: 2390,
-          AC: 3800,
+          Personal: 2390,
+          Corporate: 3800,
           amt: 2500,
         },
 
@@ -50,7 +50,7 @@ function NewDashboardBarChart() {
   return (
       <div className="flex flex-col col-span-full sm:col-span-6 bg-white shadow-lg rounded-sm border border-slate-200">
       <hader className="px-5 py-4 border-b border-slate-100">
-      <h2 className="font-semibold text-slate-800">2018 - 2023/Q1 DC - AC</h2>
+      <h2 className="font-semibold text-slate-800">Account Type</h2>
       <br/>
       <li  style={{ width: "100%", height: 350, }}> 
         <ResponsiveContainer >
@@ -65,13 +65,13 @@ function NewDashboardBarChart() {
               bottom: 5,
             }}
           >
-            <CartesianGrid strokeDasharray="3 3" />
+              <CartesianGrid strokeDasharray="3 3" horizontal={false} vertical={false}/>
             <XAxis dataKey="name" />
             <YAxis />
             <Tooltip />
             <Legend />
-            <Bar dataKey="DC" fill="#8884d8" />
-            <Bar dataKey="AC" fill="#82ca9d" />
+            <Bar dataKey="Personal" fill="#8884d8" />
+            <Bar dataKey="Corporate" fill="#82ca9d" />
           </BarChart>
         </ResponsiveContainer>
       </li>

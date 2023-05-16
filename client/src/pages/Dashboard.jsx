@@ -1,115 +1,162 @@
-import React, { useState } from 'react';
+// import { useState } from "react";
+// import { PieChart, Pie, LineChart, Line, BarChart, Bar } from "recharts";
+// import Draggable2 from './Draggable2';
+// function Deneme2() {
 
-import Sidebar from '../partials/Sidebar';
-import Header from '../partials/Header';
-import WelcomeBanner from '../partials/dashboard/WelcomeBanner';
-import DashboardAvatars from '../partials/dashboard/DashboardAvatars';
-import FilterButton from '../partials/actions/FilterButton';
-import Datepicker from '../partials/actions/Datepicker';
-import DashboardCard01 from '../partials/dashboard/DashboardCard01';
-import DashboardCard02 from '../partials/dashboard/DashboardCard02';
-import DashboardCard03 from '../partials/dashboard/DashboardCard03';
-import DashboardCard04 from '../partials/dashboard/DashboardCard04';
-import DashboardCard05 from '../partials/dashboard/DashboardCard05';
-import DashboardCard06 from '../partials/dashboard/DashboardCard06';
-import DashboardCard07 from '../partials/dashboard/DashboardCard07';
-import DashboardCard08 from '../partials/dashboard/DashboardCard08';
-import DashboardCard09 from '../partials/dashboard/DashboardCard09';
-import DashboardCard10 from '../partials/dashboard/DashboardCard10';
-import DashboardCard11 from '../partials/dashboard/DashboardCard11';
-import DashboardCard12 from '../partials/dashboard/DashboardCard12';
-import DashboardCard13 from '../partials/dashboard/DashboardCard13';
-import DashboardCard14 from '../partials/dashboard/NewDashboardPieChart';
-import DashboardCard15 from '../partials/dashboard/NewDashboardBarChart';
-import Banner from '../partials/Banner';
+//   const [selectedTopic, setSelectedTopic] = useState('');
+//   const [selectedSubTopic, setSelectedSubTopic] = useState('');
+//   const [selectedChartType, setChartType] = useState("");
 
-function Dashboard() {
+//   const handleTopicChange = (event) => {
+//     setSelectedTopic(event.target.value);
+//     setSelectedSubTopic('');
+//     setChartType('');
+//   };
 
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+//   const handleSubTopicChange = (event) => {
+//     setSelectedSubTopic(event.target.value);
+//     setChartType('');
+//   };
 
-  return (
-    <div className="flex h-screen overflow-hidden">
+//   const handleChartTypeChange = (event) => {
+//     setChartType(event.target.value);
+//   };
 
-      {/* Sidebar */}
-      <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
+// const data = [
+//   { name: "A", value: 50 },
+//   { name: "B", value: 20 },
+//   { name: "C", value: 30 },
+// ];
+// const data2 = [
+//   { name: "A", value: 400 },
+//   { name: "B", value: 300 },
+//   { name: "C", value: 300 },
+//   { name: "D", value: 200 },
+//   { name: "E", value: 278 },
+//   { name: "F", value: 189 },
+// ];
+//   let chart;
+//   if (selectedChartType === "pie") {
+//     chart = (
+//       <PieChart className="border border-gray-600 w-72 h-72 absolute bg-white line-chart-handle" width={400} height={400}>
+//         <Pie data={data} dataKey="value" nameKey="name" cx="50%" cy="50%" fill="#8884d8" />
+//       </PieChart>
+//     );
+//   } else if (selectedChartType === "line") {
+//     chart = (
+//       <LineChart className="border border-gray-600 w-72 h-72 absolute bg-white line-chart-handle" width={400} height={400} data={data}>
+//           <Line type="monotone" dataKey="value" stroke="#8884d8" />
+//       </LineChart>
+//     );
+//   } else if (selectedChartType === "bar") {
+//     chart = (
+//       <BarChart className="border border-gray-600 w-72 h-72 absolute bg-white line-chart-handle" width={400} height={400} data={data}>
+//         <Bar dataKey="value" fill="#8884d8" />
+//       </BarChart>
+//     );
+//   }
 
-      {/* Content area */}
-      <div className="relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden">
-
-        {/*  Site header */}
-        <Header sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
-
-        <main>
-          <div className="px-4 sm:px-6 lg:px-8 py-8 w-full max-w-9xl mx-auto">
-
-            {/* Welcome banner */}
-            <WelcomeBanner />
-
-            {/* Dashboard actions */}
-            <div className="sm:flex sm:justify-between sm:items-center mb-8">
-
-              {/* Left: Avatars */}
-              {/* <DashboardAvatars /> */}
-
-              {/* Right: Actions */}
-              <div className="grid grid-flow-col sm:auto-cols-max justify-start sm:justify-end gap-2">
-                {/* Filter button */}
-                <FilterButton />
-                {/* Datepicker built with flatpickr */}
-                <Datepicker />
-                {/* Add view button */}
-                <button className="btn bg-indigo-500 hover:bg-indigo-600 text-white">
-                    <svg className="w-4 h-4 fill-current opacity-50 shrink-0" viewBox="0 0 16 16">
-                        <path d="M15 7H9V1c0-.6-.4-1-1-1S7 .4 7 1v6H1c-.6 0-1 .4-1 1s.4 1 1 1h6v6c0 .6.4 1 1 1s1-.4 1-1V9h6c.6 0 1-.4 1-1s-.4-1-1-1z" />
-                    </svg>
-                    <span className="hidden xs:block ml-2">Add view</span>
-                </button>                
-              </div>
-
-            </div>
-
-            {/* Cards */}
-            <div className="grid grid-cols-12 gap-7">
-
-              {/* Line chart (Acme Plus) */}
-              <DashboardCard01 />
-              {/* Line chart (Acme Advanced) */}
-              <DashboardCard02 />
-              {/* Line chart (Acme Professional) */}
-              <DashboardCard03 />
-              {/* Bar chart (Direct vs Indirect) */}
-              <DashboardCard04 />
-              {/* Line chart (Real Time Value) */}
-              <DashboardCard05 />
-              {/* Doughnut chart (Top Countries) */}
-              <DashboardCard06 />
-              {/* Table (Top Channels) */}
-              <DashboardCard07 />
-              {/* Line chart (Sales Over Time) */}
-              <DashboardCard08 />
-              {/* Stacked bar chart (Sales VS Refunds) */}
-              <DashboardCard09 />
-              {/* Card (Customers) */}
-              <DashboardCard10 />
-              {/* Card (Reasons for Refunds) */}
-              <DashboardCard11 />
-              {/* Card (Recent Activity) */}
-              <DashboardCard12 />
-              {/* Card (Income/Expenses) */}
-              <DashboardCard13 />
-              {/* Card (Income/Expenses) */}
-        
-        
-            </div>
-
-          </div>
-        </main>
+//   return (
     
-        <Banner />
 
-      </div>
-    </div>
-  );
-}
 
-export default Dashboard;
+//     <div className="container mx-auto my-4">
+//       <h1 className="text-3xl font-bold mb-3">Report Form</h1>
+
+
+
+
+//       {/* Departman */}
+//       <div>
+//         <h6 className="text-3xl mb-3">Department</h6>
+//           <select           className="border border-gray-400 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-600 w-full"
+// id="topic-select" value={selectedTopic} onChange={handleTopicChange}>
+            
+//             <h1 className="text-3xl font-bold mb-3">Title</h1>
+//             <option value="finance">Finance</option>
+//             <option value="customer">Customer</option>
+//             <option value="station">Station</option>
+//           </select>
+//           <br/>
+//           <br/>
+//       </div>
+
+//       {/* Finans */}
+//       {selectedTopic === 'finance' &&  (
+//       <div>
+//         <h6 className="text-3xl mb-3">Finance</h6>
+//         <select className="border border-gray-400 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-600 w-full"
+//           id="subtopic-select"  value={selectedSubTopic} onChange={handleSubTopicChange}>
+//           <h1 className="text-3xl font-bold mb-3">Finance</h1>
+//           <option value="revenue">Revenue</option>
+//           <option value="energy-sales">Energy Sales</option>
+//           <option value="invoice">Invoice</option>
+//         </select>
+//         <br/>
+//         <br/>
+//       </div>
+//         )}
+
+//       {/* Customer */}
+//       {selectedTopic === 'customer' && (
+//           <div>
+//             <h6 className="text-3xl mb-3">Customer</h6>
+//             <select           className="border border-gray-400 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-600 w-full"
+//               id="subtopic-select" value={selectedSubTopic} onChange={handleSubTopicChange}>
+//               <h1 className="text-3xl font-bold mb-3">Title</h1>
+//               <option value="customer-count">Customer Count</option>
+//               <option value="active-customer-count">Active Customer Count</option>
+//             </select>
+//             <br/>
+//             <br/>
+//           </div>
+//         )}
+
+//       {/* Station */}
+//       {selectedTopic === 'station' && (
+//           <div>
+//             <h6 className="text-3xl mb-3">Station</h6>
+//             <select className="border border-gray-400 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-600 w-full"
+//               id="subtopic-select" value={selectedSubTopic} onChange={handleSubTopicChange}>
+//               <h1 className="text-3xl font-bold mb-3">Title</h1>
+//               <option value="station-count">Station Count</option>
+//               <option value="city-distribution">City Distribution</option>
+//               <option value="segment-distribution">Segment Distribution</option>
+//             </select>
+//             <br/>
+//             <br/>
+//           </div>
+//         )}
+
+
+//       {/* Chart */}
+//       {selectedSubTopic   ==='city-distribution'  &&(
+//       <div>
+
+//       <h6 className="text-3xl mb-3">Select Chart Type</h6>
+//       <select id="chartType" value={selectedChartType} onChange={handleChartTypeChange}>
+//         <option value="">Select chart type</option>
+//         <option value="pie">Pie Chart</option>
+//         <option value="line">Line Chart</option>
+//         <option value="bar">Bar Chart</option>
+//       </select>
+
+//       {chart}
+//       </div>
+//       )}
+
+//           {/* Chart */}
+//           {selectedSubTopic ==='segment-distribution' &&(
+//       <div>
+//          <Draggable2/>
+    
+//       </div>
+//       )}
+ 
+ 
+//     </div>
+    
+//   );
+// }
+
+// export default Deneme2;

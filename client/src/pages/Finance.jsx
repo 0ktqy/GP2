@@ -73,18 +73,15 @@ function Finance() {
               {/* Bar chart (Direct vs Indirect) */}
               <DashboardCard04 />
               {/* Line chart (Real Time Value) */}
-              <DashboardCard05 />
               {/* Doughnut chart (Top Countries) */}
-              <DashboardCard06 />
+              <DashboardCard09 />
      
               {/* Line chart (Sales Over Time) */}
-              <DashboardCard08 />
+         
               {/* Stacked bar chart (Sales VS Refunds) */}
-              <DashboardCard09 />
+              <DashboardCard06/>
   
               {/* Card (Reasons for Refunds) */}
-
-              <DashboardCard13 />
               {/* Card (Income/Expenses) */}
         
         

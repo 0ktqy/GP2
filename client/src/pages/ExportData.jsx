@@ -1,32 +1,20 @@
-import React, { useState } from 'react';
 
+import React, { useState } from 'react';
 import Sidebar from '../partials/Sidebar';
 import Header from '../partials/Header';
 import WelcomeBanner from '../partials/dashboard/WelcomeBanner';
-import DashboardAvatars from '../partials/dashboard/DashboardAvatars';
 import FilterButton from '../partials/actions/FilterButton';
 import Datepicker from '../partials/actions/Datepicker';
-import DashboardCard01 from '../partials/dashboard/DashboardCard01';
-import DashboardCard02 from '../partials/dashboard/DashboardCard02';
-import DashboardCard03 from '../partials/dashboard/DashboardCard03';
-import DashboardCard04 from '../partials/dashboard/DashboardCard04';
-import DashboardCard05 from '../partials/dashboard/DashboardCard05';
-import DashboardCard06 from '../partials/dashboard/DashboardCard06';
-import DashboardCard07 from '../partials/dashboard/DashboardCard07';
-import DashboardCard08 from '../partials/dashboard/DashboardCard08';
-import DashboardCard09 from '../partials/dashboard/DashboardCard09';
-import DashboardCard10 from '../partials/dashboard/DashboardCard10';
-import DashboardCard11 from '../partials/dashboard/DashboardCard11';
-import DashboardCard12 from '../partials/dashboard/DashboardCard12';
-import DashboardCard13 from '../partials/dashboard/DashboardCard13';
-import DashboardCard14 from '../partials/dashboard/NewDashboardPieChart';
-import DashboardCard15 from '../partials/dashboard/NewDashboardBarChart';
-import Deneme from './Deneme'
 import Banner from '../partials/Banner';
-
-function Costumer() {
+import DownloadExcell from '../partials/exportData/DownloadExcell'
+function ExportData() {
 
   const [sidebarOpen, setSidebarOpen] = useState(false);
+
+
+
+
+  
 
   return (
     <div className="flex h-screen overflow-hidden">
@@ -70,24 +58,19 @@ function Costumer() {
             </div>
 
             {/* Cards */}
-            <div className="grid grid-cols-12 gap-7">
+            <div>
 
               {/* Card (Income/Expenses) */}
-              <DashboardCard15 />
-              
-      
-              {/* Card (Income/Expenses) */}
-    
+
+                            {/* Line chart (Acme Plus) */}
+                         <DownloadExcell/>
             </div>
-
-          </div>
+          </div>        
         </main>
-    
         <Banner />
-
       </div>
     </div>
   );
 }
 
-export default Costumer;
+export default ExportData;

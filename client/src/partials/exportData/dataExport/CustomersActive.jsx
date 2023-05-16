@@ -2,13 +2,14 @@ import React, { useState } from "react";
 import axios from "axios";
 import * as XLSX from "xlsx";
 
-const App = () => {
+const CustomersActive = () => {
   const [data, setData] = useState([]);
 
   const fetchData = async () => {
-    const result = await axios.get("https://example.com/data.json");
+    const result = await axios.get("http://localhost:8800/activecustomers");
     setData(result.data);
   };
+
 
   const downloadExcel = () => {
     const worksheet = XLSX.utils.json_to_sheet(data);
@@ -18,7 +19,7 @@ const App = () => {
   };
 
   return (
-    <div className="container mx-auto flex flex-col items-center justify-center h-screen">
+    <div className="container mx-auto flex flex-col justify-center ">
       <button
         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
         onClick={fetchData}
@@ -36,4 +37,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default CustomersActive;

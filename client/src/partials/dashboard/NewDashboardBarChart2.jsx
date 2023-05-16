@@ -1,6 +1,5 @@
 
 import React, { useState, useEffect } from 'react';
-import { tailwindConfig } from '../../utils/Utils';
 import axios from 'axios';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
@@ -22,15 +21,17 @@ function NewDashboardBarChart2() {
       <hader className="px-5 py-4 border-b border-slate-100">
       <h2 className="font-semibold text-slate-800">Public & Private</h2>
       <br/>
-      <li  style={{ width: "100%", height: 350, }}> 
+      <li  style={{ width: 300, height: 293, }}> 
           <ResponsiveContainer>
-          <BarChart data={data}>
+          <BarChart data={data} col>
               <CartesianGrid strokeDasharray="3 3" horizontal={false} vertical={false}/>
                 <XAxis dataKey="stationStatus" />
                 <YAxis  />      
                 <Tooltip />
-                <Legend />    
-            <Bar dataKey="StationNum" fill="#8884d8" />
+                <Legend /> 
+
+ 
+            <Bar dataKey="StationNum" fill="#283593" />
             </BarChart>
           </ResponsiveContainer>
 

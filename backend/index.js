@@ -18,6 +18,8 @@ const db =mysql.createConnection({
 
 app.use(express.json())
 app.use(cors())
+
+
 app.get("/", (req,res)=>{
     res.json("Hello this is the backend")
 }); 
@@ -27,7 +29,7 @@ app.get("/", (req,res)=>{
 //Station Numbers
 
 app.get("/stationtype", (req,res)=>{
-    const q = "SELECT stationStatus, sum(stationnumSocket) as StationNum FROM stationinfo group by stationStatus"
+    const q = "SELECT stationStatus, min(stationnumSocket) as StationNum FROM emobilitydb.stationinfo group by stationStatus"
     db.query(q,(err,data)=>{
         if(err) return res.json(err)
         return res.json(data)
@@ -52,7 +54,35 @@ app.get("/StationLine", (req,res)=>{
     })
 });
 
+//Carbon Reducition
+app.get("/CarbonReduction", (req,res)=>{
+    const q = "SELECT Date2, CarbonReduction FROM carbonreduction;"
+    db.query(q,(err,data)=>{
+        if(err) return res.json(err)
+        return res.json(data)
+    })
+});
 
+//Date ALL Station DC AC
+
+app.get("/AllStationDCAC", (req,res)=>{
+    const q = "SELECT Date2, stations, dc_stations, ac_stations FROM carbonreduction;"
+    db.query(q,(err,data)=>{
+        if(err) return res.json(err)
+        return res.json(data)
+    })
+});
+
+
+//Customer Active Inactive
+
+app.get("/activecustomers", (req,res)=>{
+    const q = "SELECT Date2, stations*50 as TotalCustomer, ac_stations*50 as ActiveCustomers, dc_stations*50 as InactiveCustomers FROM carbonreduction";
+    db.query(q,(err,data)=>{
+        if(err) return res.json(err)
+        return res.json(data)
+    })
+});
 
 
 
@@ -93,6 +123,7 @@ app.delete("/books/:id",(req, res) => {
 
 
 })
+
 app.listen(8800, ()=>{
     console.log("Connected to backend!")
 })

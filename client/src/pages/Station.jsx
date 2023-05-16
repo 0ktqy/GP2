@@ -15,19 +15,9 @@ import DashboardCard01 from '../partials/dashboard/DashboardCard01';
 import DashboardCard02 from '../partials/dashboard/DashboardCard02';
 import DashboardCard03 from '../partials/dashboard/DashboardCard03';
 
-
-
 function Station() {
 
-
-
-
-
-
   
-
-
-
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
@@ -80,19 +70,22 @@ function Station() {
 
                             {/* Line chart (Acme Plus) */}
                             <DashboardCard01 />
-              {/* Line chart (Acme Advanced) */}
-              <DashboardCard02 />
-              {/* Line chart (Acme Professional) */}
-              <DashboardCard03 />
-            <DashboardCard16/>
-            <DashboardCard14/>
+                            {/* Line chart (Acme Advanced) */}
+                            <DashboardCard02 />
+                            {/* Line chart (Acme Professional) */}
+                            <DashboardCard03 />
+                            <DashboardCard16/>
+                            <DashboardCard14/>
 
             </div>
                     <br/>      
             <div>         
             <DashboardCard17/>
             </div>
+         
+  
           </div>
+          
         </main>
     
         <Banner />
