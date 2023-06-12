@@ -29,7 +29,7 @@ app.get("/", (req,res)=>{
 //Station Numbers
 
 app.get("/stationtype", (req,res)=>{
-    const q = "SELECT stationStatus, min(stationnumSocket) as StationNum FROM emobilitydb.stationinfo group by stationStatus"
+    const q = "SELECT StationType as StationType , SUM(CarbonReduction) as Station FROM emobilitydb.carbonreduction group by StationType"
     db.query(q,(err,data)=>{
         if(err) return res.json(err)
         return res.json(data)
@@ -45,9 +45,38 @@ app.get("/Segment", (req,res)=>{
     })
 });
 
+
+
+//StationPie
+
+app.get("/StationPie", (req,res)=>{
+    const q = "SELECT StationType as StationType ,max(stations)+100 as Num FROM carbonreduction group by StationType;"
+    db.query(q,(err,data)=>{
+        if(err) return res.json(err)
+        return res.json(data)
+    })
+});
+
+
+//StationLine
+
+app.get("/StationLine", (req,res)=>{
+    const q = "SELECT DATE_FORMAT(Date2, '%Y') as Date, stations+100 as Station FROM emobilitydb.carbonreduction;"
+    db.query(q,(err,data)=>{
+        if(err) return res.json(err)
+        return res.json(data)
+    })
+});
+
+
+
+
+
+
+
 //Station Segment
 app.get("/StationLine", (req,res)=>{
-    const q = "SELECT EXTRACT(year FROM stationInsertDate) as Year, count(stationID) as StationNum FROM emobilitydb.stationinfo GROUP BY EXTRACT(year FROM stationInsertDate)"
+    const q = "SELECT DATE_FORMAT(Date2, '%Y') as Date, stations+100 as Station FROM emobilitydb.carbonreduction;"
     db.query(q,(err,data)=>{
         if(err) return res.json(err)
         return res.json(data)
@@ -56,12 +85,25 @@ app.get("/StationLine", (req,res)=>{
 
 //Carbon Reducition
 app.get("/CarbonReduction", (req,res)=>{
-    const q = "SELECT Date2, CarbonReduction FROM carbonreduction;"
+    const q = "SELECT DATE_FORMAT(Date2, '%Y') as Year, CarbonReduction as kgCO2 FROM emobilitydb.carbonreduction;"
     db.query(q,(err,data)=>{
         if(err) return res.json(err)
         return res.json(data)
     })
 });
+
+//Carbon Reducition DC AC
+app.get("/CarbonReductionDCAC", (req,res)=>{
+    const q = " SELECT stationModel as Model, Count(stationModel) as CO2 FROM emobilitydb.carbonreduction group by stationModel;"
+
+    db.query(q,(err,data)=>{
+        if(err) return res.json(err)
+        return res.json(data)
+    })
+});
+
+
+
 
 //Date ALL Station DC AC
 

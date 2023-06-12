@@ -3,13 +3,13 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
-function NewDashboardLineChart() {
+function DateACandDCBar() {
 
     
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:8800/stationtype")
+    axios.get("http://localhost:8800/StationPie")
       .then(response => setData(response.data)
       );
   }, [
@@ -35,7 +35,7 @@ function NewDashboardLineChart() {
                 <Legend /> 
 
  
-            <Bar dataKey="Station" fill="#283593" />
+            <Bar dataKey="Num" fill="#283593" />
             </BarChart>
           </ResponsiveContainer>
 
@@ -51,4 +51,4 @@ function NewDashboardLineChart() {
 
 
 
-export default NewDashboardLineChart;
+export default DateACandDCBar;

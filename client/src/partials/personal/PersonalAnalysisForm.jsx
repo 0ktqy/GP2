@@ -2,7 +2,8 @@ import { useState } from "react";
 import { PieChart, Pie, LineChart, Line, BarChart, Bar } from "recharts";
 import html2pdf from "html2pdf.js";
 import SegmentDistrubition from "../personal/SegmentDistrubition"
-import SelectData from "../exportData/SelectData"
+import CarbonChart from "./CarbonChart";
+import StationChart from "./StationChart";
 
 
 function PersonalAnalysisForm() {
@@ -66,7 +67,8 @@ const data2 = [
     html2pdf(chartsHTML, {
       margin: [0, 0, 0, 0],
       filename: "charts.pdf",
-      html2canvas: { scale: 2 },
+      page_offset:1,
+      html2canvas: { scale: 5 },
       jsPDF: { unit: "px", format: "a4", orientation: "portrait" },
 
     });
@@ -281,7 +283,7 @@ id="topic-select" value={selectedTopic} onChange={handleTopicChange}>
       {/* Chart */}
          {selectedSubTopic ==='curbon-reduciton' &&(
      <div>
-       <SegmentDistrubition/>
+       <CarbonChart/>
      </div>
 
      )}
@@ -289,7 +291,7 @@ id="topic-select" value={selectedTopic} onChange={handleTopicChange}>
     {/* Chart */}
     {selectedSubTopic !='curbon-reduciton' &&(
      <div>
-        <SegmentDistrubition/>
+        <CarbonChart/>
      </div>
 
      )}
@@ -357,7 +359,7 @@ id="topic-select" value={selectedTopic} onChange={handleTopicChange}>
       {/* Chart */}
       {selectedSubTopic ==='station-dc-ac' &&(
      <div>
-       <SegmentDistrubition/>
+       <StationChart/>
      </div>
 
      )}
@@ -365,7 +367,7 @@ id="topic-select" value={selectedTopic} onChange={handleTopicChange}>
     {/* Chart */}
     {selectedSubTopic !='station-dc-ac' &&(
      <div>
-        <SegmentDistrubition/>
+        <StationChart/>
      </div>
 
      )}

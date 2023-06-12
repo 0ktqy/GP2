@@ -9,7 +9,6 @@ import FilterButton from '../partials/actions/FilterButton';
 import Datepicker from '../partials/actions/Datepicker';
 import Banner from '../partials/Banner';
 import DashboardCard14 from '../partials/dashboard/NewDashboardPieChart';
-import DashboardCard16 from '../partials/dashboard/NewDashboardBarChart2';
 import DashboardCard17 from '../partials/dashboard/NewDashboardLineChart';
 import DashboardCard01 from '../partials/dashboard/DashboardCard01';
 import DashboardCard02 from '../partials/dashboard/DashboardCard02';
@@ -74,13 +73,10 @@ function Station() {
                             <DashboardCard02 />
                             {/* Line chart (Acme Professional) */}
                             <DashboardCard03 />
-                            <DashboardCard16/>
                             <DashboardCard14/>
+                            <DashboardCard17/>
 
-            </div>
-                    <br/>      
-            <div>         
-            <DashboardCard17/>
+    
             </div>
          
   

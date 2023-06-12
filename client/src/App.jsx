@@ -19,6 +19,7 @@ import Login from './Login';
 import Finance from './pages/Finance'
 import Personal from './pages/Personal'
 import ExportData from './pages/ExportData'
+import CarbonReductionCalculate from './pages/CarbonReductionCalculate'
 
 
 
@@ -36,8 +37,9 @@ function App() {
     <>
       <Routes>
 
-        
+      
         <Route exact path="/" element={<Station />} />
+        <Route exact path="CarbonReductionCalculate" element={<CarbonReductionCalculate />} />
         <Route exact path="Costumer" element={<Customer />} />
         <Route exact path="Station" element={<Station />} />
         <Route exact path="Finance" element={<Finance/>} />

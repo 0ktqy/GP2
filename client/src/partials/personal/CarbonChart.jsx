@@ -2,10 +2,11 @@ import React, { useState, useRef } from "react";
 import html2pdf from "html2pdf.js";
 import Draggable from "react-draggable";
 import Draggable2 from "./NewTalep";
-import DashboardCard06 from '../dashboard/DashboardCard06';
-import NewDashboardBarChart2 from '../dashboard/NewDashboardBarChart2'
+import CarbonReductionPie from "../dashboard/CarbonReduction/CarbonReductionPie";
+import CarbonReductionLine from "../dashboard/CarbonReduction/CarbonReductionLine";
+import CarbonReductionBar from "../dashboard/CarbonReduction/CarbonReductionBar";
 
-const SegmentDistrubition = () => {
+const CarbonChart = () => {
  
 
 
@@ -96,7 +97,7 @@ const SegmentDistrubition = () => {
 
      {/* Stacked bar chart (Sales VS Refunds) */}
            
-              <DashboardCard06/>
+              <CarbonReductionPie/>
       
               
   
@@ -132,7 +133,7 @@ const SegmentDistrubition = () => {
 
 {/* Stacked bar chart (Sales VS Refunds) */}
       
-         <DashboardCard06/>
+         <CarbonReductionLine/>
  
          
 
@@ -154,7 +155,7 @@ const SegmentDistrubition = () => {
               onStop={(event, data) => handleChartDrag(event, data, "bar")}
             >
                <div className="absolute p-4 handle">
-              <NewDashboardBarChart2/>
+              <CarbonReductionBar/>
               </div>
               
               </Draggable>
@@ -179,4 +180,4 @@ const SegmentDistrubition = () => {
 
 
 
-export default SegmentDistrubition;
+export default CarbonChart;
